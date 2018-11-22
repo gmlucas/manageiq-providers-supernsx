@@ -1,0 +1,30 @@
+---
+:ems:
+  :ems_supernsx:
+    :blacklisted_event_names: []
+    :event_handling:
+      :event_groups:
+
+        :power:
+          :critical:
+            - SUPERNSX_instance_power_on
+            - SUPERNSX_instance_power_off
+
+:http_proxy:
+  :supernsx:
+    :host:
+    :password:
+    :port:
+    :user:
+
+:workers:
+  :worker_base:
+    :event_catcher:
+      :event_catcher_supernsx:
+        :poll: 20.seconds
+    :queue_worker_base:
+      :ems_metrics_collector_worker:
+        :ems_metrics_collector_worker_supernsx: {}
+      :ems_refresh_worker:
+        :ems_refresh_worker_supernsx: {}
+
